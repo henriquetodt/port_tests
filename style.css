@@ -11,6 +11,8 @@ body {
     max-width: 90%; /* Largura máxima adaptável */
     width: 400px; /* Largura padrão */
     margin: 20px auto; /* Espaçamento vertical e centralização horizontal */
+    padding-top: 60px;
+    padding-bottom: 60px;
     padding: 20px;
     background: linear-gradient(135deg, #2D3040, #545669);
     border-radius: 15px;
@@ -44,39 +46,35 @@ body {
 /* Barra de redes sociais */
 .social-bar {
     display: flex;
-    justify-content: flex-start; /* Alinha ícones das redes sociais à esquerda */
-    gap: 15px;
+    justify-content: center; /* Alinha ícones das redes sociais à esquerda */
+    gap: 35px;
 }
 
 .social-icon {
-    color: #ffffff;
+    color: #2d3040cb;
     font-size: 1.5em;
     text-decoration: none;
-    width: 50px; /* Largura fixa */
-    height: 50px; /* Altura fixa */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%; /* Torna o elemento perfeitamente redondo */
-    background: rgba(255, 255, 255, 0.1);
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.2s;
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    
+    transform: scale(1.25);
 }
 
 .social-icon.whatsapp:hover {
-    color: #25D366;
+    color: #B3D1FF;
 }
 
 .social-icon.linkedin:hover {
-    color: #0077B5;
+    color: #B3D1FF;
 }
 
 .social-icon.email:hover {
-    color: #D44638;
+    color: #B3D1FF;
 }
 
 /* Responsividade */
@@ -84,6 +82,8 @@ body {
     .container {
         width: 90%;
         padding: 15px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .container h1 {
@@ -96,6 +96,7 @@ body {
 
     .container p {
         font-size: 0.9em;
+        padding-top: 50px;
     }
 
     .social-icon {
