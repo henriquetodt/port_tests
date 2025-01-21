@@ -1,36 +1,36 @@
 /* style.css */
 body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px; /* Adiciona espaçamento interno para evitar bordas coladas */
     background: radial-gradient(circle, #78FFE7 0%, #6798E0 63%, #745ABF 100%);
     font-family: 'Inter', Arial, sans-serif;
 }
 
+/* Estilização para os containers */
 .container {
-    max-width: 90%;
-    width: 400px;
+    max-width: 90%; /* Largura máxima adaptável */
+    width: 400px; /* Largura padrão */
+    margin: 20px auto; /* Espaçamento vertical e centralização horizontal */
     padding: 20px;
-    margin: 0 5%; /* Margem lateral de 5% */
     background: linear-gradient(135deg, #2D3040, #545669);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: left; /* Alinhamento dos textos à esquerda */
+    text-align: left; /* Textos alinhados à esquerda */
     color: #ffffff;
 }
 
 .container h1 {
-    font-size: 1.8em;
-    margin-bottom: 5px; /* Redução do espaço entre h1 e h2 */
+    font-size: 2em;
+    margin-bottom: 0px; /* Espaçamento entre h1 e h2 */
+    color: #B3D1FF; /* Cor do texto do h1 */
     font-family: 'Montserrat', Arial, sans-serif;
-    color: #B3D1FF; /* Cor personalizada para o h1 */
 }
 
 .container h2 {
-    font-size: 1.2em;
-    margin-bottom: 50px;
+    font-size: 0.75em;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 15px;
     font-weight: 500;
     color: #d1d1d1;
 }
@@ -39,12 +39,12 @@ body {
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 20px;
-    margin-top: 50px;
 }
 
+/* Barra de redes sociais */
 .social-bar {
     display: flex;
-    justify-content: flex-start; /* Ícones alinhados à esquerda */
+    justify-content: flex-start; /* Alinha ícones das redes sociais à esquerda */
     gap: 15px;
 }
 
@@ -52,12 +52,12 @@ body {
     color: #ffffff;
     font-size: 1.5em;
     text-decoration: none;
-    width: 50px;
-    height: 50px;
+    width: 50px; /* Largura fixa */
+    height: 50px; /* Altura fixa */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 50%; /* Torna o elemento perfeitamente redondo */
     background: rgba(255, 255, 255, 0.1);
     transition: background 0.3s, transform 0.2s;
 }
@@ -99,8 +99,8 @@ body {
     }
 
     .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3em;
+        width: 40px; /* Menor largura em telas pequenas */
+        height: 40px; /* Menor altura em telas pequenas */
+        font-size: 1.3em; /* Ícones um pouco menores */
     }
 }
