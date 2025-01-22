@@ -1,30 +1,396 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Hover</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>Portfolio - Analista de Dados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg-light: #d3d3d3; /* Fundo geral */
+            --bg-dark: #a9a9a9; /* Linhas diagonais */
+            --container-bg: #ffffff; /* Fundo branco do container */
+            --container-border: #000000; /* Cor da borda do container */
+            --text-dark: #0f0f0f; /* Texto escuro */
+            --text-light: #333333; /* Texto claro */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            background-image: linear-gradient(-45deg, var(--bg-dark) 10%, transparent 10%, transparent 50%, var(--bg-dark) 50%, var(--bg-dark) 60%, transparent 60%, transparent);
+            background-size: 10px 10px;
+            color: #333;
+            line-height: 1.6;
+            font-family: "Montserrat", serif;
+            font-style: bold;
+        }
+
+        .header {
+            background-color: #efefef00;
+            padding-top: 2rem;
+            padding: auto;
+            padding-bottom: 0;
+            text-align: center;
+            margin-bottom: 0;
+            /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0rem;
+        }
+
+        .introbox {
+            background-color: var(--container-bg); /* Fundo branco */
+            border: 2px solid var(--container-border); /* Borda fina */
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 1); /* Sombra com deslocamento menor e mais difusa */
+            padding: 20px;
+            margin: 20px auto; /* Centraliza o container e adiciona espaço em cima e embaixo */
+            max-width: 100%;
+            text-align: left;
+            border-radius: 10px; /* Cantos arredondados */
+            position: relative; /* Necessário para sombras internas */
+            margin-bottom: 20px; /* Espaço entre o container e o bloco clicável */        
+
+        }
+
+        .intro {
+            text-align: left;
+            margin: 0rem 0;
+            line-height: 1.2;
+            color: var(--text-light);
+        }
+
+        .p {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0rem;
+            color: var(--text-dark);
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-family: "Inter", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 0rem;
+        }
+
+        .case-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .case-card {
+            border: 2px solid var(--container-border); /* Borda fina */
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 6px 6px 0px rgba(0,0,0,1);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+        }
+
+        .case-card::after {
+            content: '→';
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+
+        .case-link:hover .case-card {
+            transform: scale(1.01);
+            /* box-shadow: 6px 6px 0px rgba(0,0,0,1); */
+        }
+
+        .case-link:hover .case-card::after {
+            opacity: 1;
+            right: 1rem;
+        }
+
+        .case-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        }
+
+        .case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+            padding-bottom: 3rem;
+        }
+
+        .case-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .case-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #d4d4d4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+            .subtitle {
+                padding-top: 0;
+                margin-top: 0;
+            }
+
+            p {
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact {
+            text-align: center;
+            margin-top: 0rem;
+            padding: 0rem 0;
+            background-color: #efefef00;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #efefef00;
+            margin-bottom: 2%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: #2c3e5000;
+            color: var(--text-light);
+            /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-icons {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header class="header" data-aos="fade-down">
 
-    <div class="container" data-aos="fade-up">
-        <h1>Título do Container</h1>
-        <h2>Subtítulo</h2>
-        <p>Este é um parágrafo dentro do container. Ele está aqui para demonstrar o conteúdo.</p>
-    </div>
+    </header>
 
-    <!-- Bloco Clicável -->
-    <div class="clickable-block" data-aos="fade-up">
-        <img src="img/dash1.jpg" alt="Imagem do Bloco">
-        <h2>Bloco Clicável</h2>
-        <p>Texto explicativo sobre o conteúdo do bloco clicável.</p>
-    </div>
+    <main class="container">
+        <section class="introbox" data-aos="fade-up">
+            <h1>Luiz Henrique Todt</h1>
+            <p class="subtitle">ANALISTA DE DADOS E BUSINESS INTELLIGENCE</p>
+            <!-- <h2>Portfólio</h2> -->
+            <p>Explore os projetos mais destacados em Análise de Dados do meu portfólio.</p>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <section class="cases-grid">
+            <a href="case1.html" class="case-link" data-aos="fade-up">
+                <article class="case-card">
+                    <div class="case-image">
+                        <img src="img/dash1.jpg" alt="Dashboard de Analytics">
+                    </div>
+                    <div class="case-content">
+                        <h3 class="case-title">Otimização de Vendas</h3>
+                        <p class="case-description">Análise completa do funil de vendas identificando pontos de melhoria e oportunidades de crescimento.</p>
+                        <div class="case-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <a href="case-previsao-demanda.html" class="case-link" data-aos="fade-up" data-aos-delay="100">
+                <article class="case-card">
+                    <div class="case-image">
+                        <img src="img/dash2.jpg" alt="Dashboard de Analytics">
+                    </div>
+                    <div class="case-content">
+                        <h3 class="case-title">Análise Preditiva</h3>
+                        <p class="case-description">Desenvolvimento de modelo de machine learning para previsão de demanda com 95% de acurácia.</p>
+                        <div class="case-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <a href="case-dashboard.html" class="case-link" data-aos="fade-up" data-aos-delay="200">
+                <article class="case-card">
+                    <div class="case-image">Business Intelligence</div>
+                    <div class="case-content">
+                        <h3 class="case-title">Dashboard Executivo</h3>
+                        <p class="case-description">Criação de dashboard executivo para acompanhamento de KPIs em tempo real.</p>
+                        <div class="case-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="case-dashboard.html" class="case-link" data-aos="fade-up" data-aos-delay="200">
+                <article class="case-card">
+                    <div class="case-image">Business Intelligence</div>
+                    <div class="case-content">
+                        <h3 class="case-title">Dashboard Executivo</h3>
+                        <p class="case-description">Criação de dashboard executivo para acompanhamento de KPIs em tempo real.</p>
+                        <div class="case-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="case-dashboard.html" class="case-link" data-aos="fade-up" data-aos-delay="200">
+                <article class="case-card">
+                    <div class="case-image">Business Intelligence</div>
+                    <div class="case-content">
+                        <h3 class="case-title">Dashboard Executivo</h3>
+                        <p class="case-description">Criação de dashboard executivo para acompanhamento de KPIs em tempo real.</p>
+                        <div class="case-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="case-dashboard.html" class="case-link" data-aos="fade-up" data-aos-delay="200">
+                <article class="case-card">
+                    <div class="case-image">Business Intelligence</div>
+                    <div class="case-content">
+                        <h3 class="case-title">Dashboard Executivo</h3>
+                        <p class="case-description">Criação de dashboard executivo para acompanhamento de KPIs em tempo real.</p>
+                        <div class="case-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </section>
+       <section class="contact">
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:seu.email@exemplo.com" class="social-link" title="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
     </script>
 </body>
 </html>
