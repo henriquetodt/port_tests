@@ -83,6 +83,28 @@
             padding-top: 40px;
         }
 
+        .custom-list {
+        list-style-type: none; /* Define o estilo dos bullets */
+        margin: 00px;
+        margin-bottom: 40px;
+        padding: 0 00px; /* Adiciona espaço interno para alinhar com o texto */
+        }
+
+        .custom-list li {
+        margin: 1px 0; /* Adiciona espaço entre os itens */
+        color: var(--text-light); /* Altera a cor do texto */
+        font-size: 18px; /* Define o tamanho da fonte */
+        }
+
+        .custom-list li::before {
+        content: "💻"; /* Caractere ou emoji */
+        color: var(--text-dark);
+        font-size: 16px;
+        margin-right: 10px;
+        
+        }
+        
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0rem;
@@ -201,11 +223,12 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 padding-bottom: 0;
                 margin-bottom: 0;
             }
             .subtitle {
+                font-size: 1rem;
                 padding-top: 0;
                 margin-top: 0;
             }
@@ -258,6 +281,7 @@
             font-size: 1.5rem;
         }
 
+        
         @media (max-width: 768px) {
             .social-icons {
                 gap: 1rem;
@@ -273,8 +297,14 @@
     <main class="container">
         <section class="introbox" data-aos="fade-up">
             <h1>Luiz Henrique Todt</h1>
-            <p class="subtitle">ANALISTA DE DADOS E BUSINESS INTELLIGENCE</p>
+            <p class="subtitle">ANALISTA DE DADOS</p>
             <!-- <h2>Portfólio</h2> -->
+            <ul class="custom-list">
+            <li>Análise de dados</li>
+            <li>Análise de negócios</li>
+            <li>Análise de marketing</li>
+            <li>Análise financeira</li>
+        </ul>
             <p>Explore os projetos mais destacados em Análise de Dados do meu portfólio.</p>
         </section>
 
