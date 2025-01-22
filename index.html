@@ -96,14 +96,25 @@
             align-items: center; /* Centraliza verticalmente o ícone e o texto */
             gap: 10px; /* Espaçamento entre o ícone e o texto */
             margin: 0px 0; /* Espaçamento entre os itens da lista */
+            position: relative;
+            padding-right: 2px; /* Espaço para a seta */
             
         }
 
         .custom-list li::before {
-            content: "data_thresholding"; /* Nome do ícone */
+            content: "monitoring"; /* Nome do ícone */
             font-family: "Material Symbols Outlined";
             font-size: 20px; /* Ajuste do tamanho do ícone */
             color: var(--text-dark); /* Cor do ícone */
+        }
+
+        .custom-list li::after {
+            content: "search_insights"; /* Insere a seta */
+            font-family: "Material Symbols Outlined";
+            position: relative;
+            right: 0; /* Posiciona a seta à direita */
+            color: var(--text-dark); /* Cor da seta */
+            font-size: 1.2em; /* Tamanho da seta */
         }
         
 
@@ -305,7 +316,8 @@
                 <li>Coleta de Dados</li>
                 <li>Limpeza e Preparação de Dados</li>
                 <li>Exploração de Dados</li>
-                <li>Criação de Dashboards e Relatórios</li>
+                <li>Criação de Dashboards</li>
+                <li>Desenvolvimento de Relatórios</li>
                 <li>Modelagem de Dados</li>
                 <li>Monitoramento de KPIs</li>
                 <li>Suporte à Tomada de Decisão</li>
