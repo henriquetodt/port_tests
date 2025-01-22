@@ -1,107 +1,93 @@
-/* style.css */
+/* Variáveis de cores */
+:root {
+    --bg-light: #d3d3d3; /* Fundo geral */
+    --bg-dark: #a9a9a9; /* Linhas diagonais */
+    --container-bg: #ffffff; /* Fundo branco do container */
+    --container-border: #000000; /* Cor da borda do container */
+    --text-dark: #333333; /* Texto escuro */
+    --text-light: #555555; /* Texto claro */
+}
+
+/* Configurações gerais */
 body {
     margin: 0;
-    padding: 20px; /* Adiciona espaçamento interno para evitar bordas coladas */
-    background: radial-gradient(circle, #78FFE7 0%, #6798E0 63%, #745ABF 100%);
-    font-family: 'Inter', Arial, sans-serif;
-}
-
-/* Estilização para os containers */
-.container {
-    max-width: 90%; /* Largura máxima adaptável */
-    width: 400px; /* Largura padrão */
-    margin: 20px auto; /* Espaçamento vertical e centralização horizontal */
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding: 20px;
-    background: linear-gradient(135deg, #2D3040, #545669);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: left; /* Textos alinhados à esquerda */
-    color: #ffffff;
-}
-
-.container h1 {
-    font-size: 2em;
-    margin-bottom: 0px; /* Espaçamento entre h1 e h2 */
-    color: #B3D1FF; /* Cor do texto do h1 */
-    font-family: 'Montserrat', Arial, sans-serif;
-}
-
-.container h2 {
-    font-size: 10px;
-    margin-top: 0;
-    padding-top: 0;
-    margin-bottom: 15px;
-    font-weight: 500;
-    color: #d1d1d1;
-}
-
-.container p {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Barra de redes sociais */
-.social-bar {
-    display: flex;
-    justify-content: center; /* Alinha ícones das redes sociais à esquerda */
-    gap: 35px;
-}
-
-.social-icon {
-    color: #2d3040cb;
-    font-size: 1.5em;
-    text-decoration: none;
+    height: 100vh;
+    background-color: var(--bg-light);
+    background-image: linear-gradient(-45deg, var(--bg-dark) 10%, transparent 10%, transparent 50%, var(--bg-dark) 50%, var(--bg-dark) 60%, transparent 60%, transparent);
+    background-size: 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s;
+    font-family: 'Poppins', sans-serif; /* Fonte sans-serif espessa */
+    flex-direction: column;
 }
 
-.social-icon:hover {
-    
-    transform: scale(1.25);
-}
-
-.social-icon.whatsapp:hover {
-    color: #B3D1FF;
-}
-
-.social-icon.linkedin:hover {
-    color: #B3D1FF;
-}
-
-.social-icon.email:hover {
-    color: #B3D1FF;
+/* Configurações do container */
+.container {
+    background-color: var(--container-bg); /* Fundo branco */
+    border: 1px solid var(--container-border); /* Borda fina */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1); /* Sombra com deslocamento menor e mais difusa */
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px; /* Cantos arredondados */
+    position: relative; /* Necessário para sombras internas */
+    margin-bottom: 20px; /* Espaço entre o container e o bloco clicável */
 }
 
 /* Responsividade */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
-        width: 90%;
-        padding: 15px;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        max-width: 90%;
     }
+}
 
-    .container h1 {
-        font-size: 1.8em;
-    }
+/* Estilo do título, subtítulo e parágrafo */
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: 800; /* Espessura máxima */
+    color: var(--text-dark);
+}
 
-    .container h2 {
-        font-size: 0.75em;
-    }
+h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: 800; /* Espessura máxima */
+    color: var(--text-dark);
+}
 
-    .container p {
-        font-size: 0.9em;
-        padding-top: 50px;
-    }
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 700; /* Espesso */
+    color: var(--text-light);
+}
 
-    .social-icon {
-        width: 40px; /* Menor largura em telas pequenas */
-        height: 40px; /* Menor altura em telas pequenas */
-        font-size: 1.3em; /* Ícones um pouco menores */
-    }
+/* Estilo do bloco clicável */
+.clickable-block {
+    background-color: var(--container-bg); /* Fundo branco */
+    border: 1px solid var(--container-border); /* Borda fina */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1); /* Sombra com deslocamento menor e mais difusa */
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px; /* Cantos arredondados */
+    position: relative; /* Necessário para sombras internas */
+    cursor: pointer; /* Indica que o bloco é clicável */
+    margin-bottom: 20px; /* Espaço entre o bloco e o próximo elemento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para transform e box-shadow */
+    width: 100%;
+}
+
+/* Efeito de hover no bloco clicável */
+.clickable-block:hover {
+    transform: scale(1.02) !important; /* Leve elevação ao passar o mouse */
+    /*box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);  Sombra mais forte no hover */
+}
+
+.clickable-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }

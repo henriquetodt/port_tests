@@ -1,48 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Container</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Exemplo de Hover</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Luiz Henrique Todt</h1>
-        <h2>ANALISTA DE DADOS E BUSINESS INTELLIGENCE</h2>
-        <p>Explore meus trabalhos mais destacados no portfólio abaixo.</p>
+
+    <div class="container" data-aos="fade-up">
+        <h1>Título do Container</h1>
+        <h2>Subtítulo</h2>
+        <p>Este é um parágrafo dentro do container. Ele está aqui para demonstrar o conteúdo.</p>
     </div>
-    <div class="container">
-        <h1>Luiz Henrique Todt</h1>
-        <h2>ANALISTA DE DADOS E BUSINESS INTELLIGENCE</h2>
-        <p>Explore meus trabalhos mais destacados no portfólio abaixo.</p>
+
+    <!-- Bloco Clicável -->
+    <div class="clickable-block" data-aos="fade-up">
+        <img src="img/dash1.jpg" alt="Imagem do Bloco">
+        <h2>Bloco Clicável</h2>
+        <p>Texto explicativo sobre o conteúdo do bloco clicável.</p>
     </div>
-    <div class="container">
-        <h1>Luiz Henrique Todt</h1>
-        <h2>ANALISTA DE DADOS E BUSINESS INTELLIGENCE</h2>
-        <p>Explore meus trabalhos mais destacados no portfólio abaixo.</p>
-    </div>
-    <div class="container">
-        <h1>Luiz Henrique Todt</h1>
-        <h2>ANALISTA DE DADOS E BUSINESS INTELLIGENCE</h2>
-        <p>Explore meus trabalhos mais destacados no portfólio abaixo.</p>
-    </div>
-    <div class="social-bar">
-        <a href="#" class="social-icon whatsapp" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="social-icon linkedin" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="social-icon email" title="E-mail">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
-    
-        
-    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
