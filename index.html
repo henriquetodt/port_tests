@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
     <style>
 
@@ -84,24 +85,24 @@
         }
 
         .custom-list {
-        list-style-type: none; /* Define o estilo dos bullets */
-        margin: 00px;
-        margin-bottom: 40px;
-        padding: 0 00px; /* Adiciona espaço interno para alinhar com o texto */
+            list-style: none; /* Remove default bullets */
+            padding: 0;
+            margin-bottom: 40px;
         }
 
         .custom-list li {
-        margin: 1px 0; /* Adiciona espaço entre os itens */
-        color: var(--text-light); /* Altera a cor do texto */
-        font-size: 18px; /* Define o tamanho da fonte */
+            display: flex; /* Alinha os itens horizontalmente */
+            align-items: center; /* Centraliza verticalmente o ícone e o texto */
+            gap: 10px; /* Espaçamento entre o ícone e o texto */
+            margin: 0px 0; /* Espaçamento entre os itens da lista */
+            
         }
 
         .custom-list li::before {
-        content: "💻"; /* Caractere ou emoji */
-        color: var(--text-dark);
-        font-size: 16px;
-        margin-right: 10px;
-        
+            content: "data_thresholding"; /* Nome do ícone */
+            font-family: "Material Symbols Outlined";
+            font-size: 20px; /* Ajuste do tamanho do ícone */
+            color: var(--text-dark); /* Cor do ícone */
         }
         
 
@@ -305,7 +306,7 @@
             <li>Análise de marketing</li>
             <li>Análise financeira</li>
         </ul>
-            <p>Explore os projetos mais destacados em Análise de Dados do meu portfólio.</p>
+            <p>Explore os projetos de maior destaque do meu portfólio nos links abaixo.</p>
         </section>
 
         <section class="cases-grid">
