@@ -164,14 +164,15 @@
         }
 
         .case-card::after {
-            content: '→';
+            content: "search_insights"; /* Insere a seta */
+            font-family: "Material Symbols Outlined";
             position: absolute;
             bottom: 1rem;
             right: 1.5rem;
             font-size: 1.2rem;
             opacity: 0;
             transition: all 0.3s ease;
-            color: #2c3e50;
+            color: var(--text-dark);
         }
 
         .case-link:hover .case-card {
